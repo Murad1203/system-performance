@@ -7,15 +7,18 @@ import com.itkvant.itkvant.model.User;
 import com.itkvant.itkvant.model.Wallet;
 import com.itkvant.itkvant.repository.TransactionRepository;
 import com.itkvant.itkvant.repository.WalletRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class WalletService {
 
     @Autowired
@@ -34,15 +37,22 @@ public class WalletService {
         return wallet;
     }
 
+    public Wallet findBYUserId(Long userId) {
+        return walletRepo.findByUserId(userId).orElseThrow(() -> new WalletNotFundsException("Wallet By User not funds with id: " + userId));
+    }
+
     public Wallet createWallet(User user) {
+        log.info("----Wallet - 1 = ");
         Wallet wallet = new Wallet();
         wallet.setUser(user);
+        log.info("===2==" + user);
         return walletRepo.save(wallet);
     }
 
     public List<Wallet> getAllWallets() {
         return walletRepo.findAll();
     }
+
 
     @Transactional
     public void addFunds(Long walletId, Double amount) {

@@ -2,15 +2,16 @@ package com.itkvant.itkvant.model;
 
 import lombok.*;
 
+
 import javax.persistence.*;
 
 
+
+@Entity
+@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Getter
-@Setter
-@ToString
 public class Wallet {
 
     @Id
@@ -26,4 +27,5 @@ public class Wallet {
 
     @Builder.Default
     private String currency = Currency.KVANT.name();
+
 }

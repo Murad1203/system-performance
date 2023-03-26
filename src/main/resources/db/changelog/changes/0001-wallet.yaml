@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-wallet-table
+      author: wallet-table
+      changes:
+        - createTable:
+            tableName: wallet
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+              - column:
+                  name: user_id
+                  type: bigint
+              - column:
+                  name: balance
+                  type: decimal
+              - column:
+                  name: currency
+                  type: varchar(10)
+        - addPrimaryKey:
+            columnNames: id
+            tableName: wallet
+            constraintName: PK_wallet
+
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: wallet
+            referencedColumnNames: id
+            referencedTableName: users
+            constraintName: FK_wallet_user

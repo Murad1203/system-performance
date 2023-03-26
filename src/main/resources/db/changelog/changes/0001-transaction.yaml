@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-transaction-table
+      author: transaction-table
+      changes:
+        - createTable:
+            tableName: transaction
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+              - column:
+                  name: amount
+                  type: decimal
+              - column:
+                  name: dateTime
+                  type: datetime
+              - column:
+                  name: wallet
+                  type: bigint
+        - addPrimaryKey:
+            columnNames: id
+            tableName: transaction
+            constraintName: PK_transaction
+        - addForeignKeyConstraint:
+            baseColumnNames: wallet
+            baseTableName: transaction
+            referencedColumnNames: id
+            referencedTableName: wallet
+            constraintName: FK_transaction_wallet

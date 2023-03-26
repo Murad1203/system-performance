@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-table
+      author: user-table
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: lastname
+                  type: varchar(255)
+              - column:
+                  name: email
+                  type: varchar(255)
+              - column:
+                  name: password
+                  type: varchar(255)
+              - column:
+                  name: user_role
+                  type: varchar(255)
+              - column:
+                  name: locked
+                  type: boolean
+              - column:
+                  name: enabled
+                  type: boolean
+        - addPrimaryKey:
+            columnNames: id
+            tableName: users
+            constraintName: PK_user

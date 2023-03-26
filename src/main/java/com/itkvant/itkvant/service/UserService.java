@@ -3,6 +3,7 @@ package com.itkvant.itkvant.service;
 import com.itkvant.itkvant.model.User;
 import com.itkvant.itkvant.model.Wallet;
 import com.itkvant.itkvant.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,6 +15,7 @@ import java.text.MessageFormat;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class UserService implements UserDetailsService {
 
     @Autowired
@@ -22,6 +24,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Autowired
     private WalletService walletService;
 
 
@@ -38,11 +41,23 @@ public class UserService implements UserDetailsService {
 
 
     public void signUpUser(User user) {
+        log.info("----- user ----");
         final String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
-        Wallet wallet = walletService.createWallet(user);
         user.setPassword(encryptedPassword);
-        user.setWallet(wallet);
+
         final User createdUser = userRepository.save(user);
+        log.info("----3-----" + user);
+        walletService.createWallet(user);
+    }
+
+    public User findById(Long id) {
+        User user = null;
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            user = optionalUser.get();
+        }
+
+        return user;
     }
 
 }

@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/changes/0001-user.yaml
+
+  - include:
+      file: classpath:db/changelog/changes/0001-wallet.yaml
+  - include:
+      file: classpath:db/changelog/changes/0001-transaction.yaml
