@@ -1,13 +1,64 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" th:href="@{/css/login-style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
 </head>
+
 <body>
-<h1>Login</h1>
+
+<div class="main">
+    <div class="main-form">
+        <div class="main-head">
+            <div class="main-logo"><img th:src="@{/image/Ethereum.svg}" alt=""></div>
+            <div>
+                <h1 class="main-logo-name">IT-Квантум</h1>
+            </div>
+        </div>
+
+        <div class="body-login">
+            <div class="main-form-body">
+                <h2>Вход</h2>
+                <p>Если у вас нет учетной записи, зарегистрируйтесь</p>
+                <p>Вы можете зарегистрироваться <a th:href="@{/sign-up}">здесь!</a></p>
+
+                <div class="main-form-input">
+                    <div class="inp-email">
+                        <form action="#" th:action="@{/login}" th:method="post">
+                            <div class="block-for-input">
+                                <label for="username" class="label">Почта</label>
+                                <div class="input-container">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="text" id="username" name="username" placeholder="Введите адрес почты" />
+                                </div>
+                            </div>
+                            <div class="block-for-input">
+                                <label for="password" class="label">Пароль</label>
+                                <div class="input-container">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="text" id="password" name="password" placeholder="Введите пароль" />
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Войти" class="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-photo">
+        <img th:src="@{/image/Group 33.svg}" alt="">
+    </div>
+</div>
+
 </body>
+
 </html>

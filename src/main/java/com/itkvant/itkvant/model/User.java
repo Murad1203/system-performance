@@ -36,9 +36,6 @@ public class User implements UserDetails {
 
     private String name;
     private String lastname;
-
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-//    private Wallet wallet;
     @Column(unique = true)
     private String email;
     private String password;

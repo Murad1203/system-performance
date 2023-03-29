@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" th:href="@{/css/login-style.css}">
+
+</head>
+
+<body>
+
+<div class="main">
+    <div class="main-form">
+        <div class="main-head">
+            <div class="main-logo"><img th:src="@{/image/Ethereum.svg}" alt=""></div>
+            <div>
+                <h1 class="main-logo-name">IT-Квантум</h1>
+            </div>
+        </div>
+
+        <div class="body-login">
+            <div class="main-form-body">
+                <h2>Регистрация</h2>
+                <p>Если у вас уже есть учетная запись </p>
+                <p>Вы можете войти <a href="#">здесь!</a></p>
+
+                <div class="main-form-input">
+                    <div class="inp-email">
+                        <form action="#" th:action="@{/sign-up}" th:method="post" th:object="${user}">
+
+                            <div class="block-for-input">
+                                <label for="name" class="label">Имя</label>
+                                <div class="input-container">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <input type="text" id="name" name="name" th:field="*{name}" placeholder="Введите имя" />
+                                </div>
+                            </div>
+                            <div class="block-for-input">
+                                <label for="lastname" class="label">Фамилия</label>
+                                <div class="input-container">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <input type="text" id="lastname" name="lastname" th:field="*{lastname}" placeholder="Введите фамилию" />
+                                </div>
+                            </div>
+
+                            <div class="block-for-input">
+                                <label for="email" class="label">Почта</label>
+                                <div class="input-container">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="text" id="email" name="email" th:field="*{email}"  placeholder="Введите адрес почты" />
+                                </div>
+                            </div>
+
+                            <div class="block-for-input">
+                                <label for="password" class="label">Пароль</label>
+                                <div class="input-container">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="text" id="password" name="password" th:field="*{password}" placeholder="Введите пароль" />
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Зарегестрироваться" class="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-photo">
+        <img src="/image/Group 33.svg" alt="">
+    </div>
+</div>
+
+</body>
+
+</html>

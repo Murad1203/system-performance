@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IT-MMY</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -44,7 +44,7 @@
                     </li>
 
                     <li class="header__item">
-                        <a class="header__link" href="#">9999KV</a>
+                        <a class="header__link" href="#" th:text="'Баланс: ' + ${balance} + 'KV'">9999KV</a>
                     </li>
                 </ul>
             </nav>
@@ -52,11 +52,11 @@
     </div>
 </header>
 
-<main class="main">
-    <h2 class="desc">
+<div class="main" style="">
+    <h2 class="desc" style="width: 900px; text-align: center" >
         Бонусы за задания - наш сайт для учеников. Выполняйте задания и получайте кванты, которые можно обменивать на призы. Соревнуйтесь и делитесь успехами с друзьями!
     </h2>
-</main>
+</div>
 
 
 <section class="project">

@@ -42,10 +42,9 @@ public class WalletService {
     }
 
     public Wallet createWallet(User user) {
-        log.info("----Wallet - 1 = ");
         Wallet wallet = new Wallet();
         wallet.setUser(user);
-        log.info("===2==" + user);
+        wallet.setBalance(0.0);
         return walletRepo.save(wallet);
     }
 

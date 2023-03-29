@@ -1,6 +1,7 @@
 package com.itkvant.itkvant.config;
 
 import com.itkvant.itkvant.service.UserService;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +32,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests()
                 .antMatchers("/sign-up").permitAll()
                 .antMatchers("/login").permitAll()
-                .antMatchers("/").permitAll()
+                .antMatchers("/").authenticated()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -47,14 +48,6 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService)
                 .passwordEncoder(bCryptPasswordEncoder);
-    }
-
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/login")
-                .allowedOrigins("http://localhost:3000/")
-                .allowedMethods("*");
     }
 
     @Bean
