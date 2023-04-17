@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: MMY
+      changes:
+        - renameTable:
+            oldTableName: Assignment
+            newTableName: assignment

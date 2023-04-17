@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeMirror Python Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/theme/material.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/edit/closebrackets.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/edit/matchbrackets.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/lint/lint.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/lint/pyflakes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/lint/lint.css"></script>
+    <link rel="stylesheet" th:href="@{/css/assignment.css}">
+</head>
+<body>
+<form action="">
+    <textarea id="python-editor">//Напишите код сюда</textarea>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("python-editor"), {
+            mode: "python",
+            theme: "material",
+            lineNumbers: true,
+            autoCloseBrackets: true,
+            matchBrackets: true,
+            lint: true,
+            gutters: ["CodeMirror-lint-markers"],
+            lintWith: CodeMirror.pyflakes,
+            extraKeys: {"Ctrl-Space": "autocomplete"}
+        });
+    </script>
+
+    <input type="button" value="Отправить на проверку">
+
+</form>
+
+
+</body>
+</html>
