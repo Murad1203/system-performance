@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: change_column_name
+      author: MMY
+      changes:
+        - renameColumn:
+            tableName: transaction
+            oldColumnName: wallet
+            newColumnName: wallet_id

@@ -4,7 +4,7 @@ databaseChangeLog:
       author: table-assignment
       changes:
         - createTable:
-            tableName: Assignment
+            tableName: assignment
             columns:
               - column:
                   name: id

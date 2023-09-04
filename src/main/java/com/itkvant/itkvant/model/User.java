@@ -47,7 +47,7 @@ public class User implements UserDetails {
     private Boolean locked = false;
 
     @Builder.Default
-    private Boolean enabled = false;
+    private Boolean enabled = true;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

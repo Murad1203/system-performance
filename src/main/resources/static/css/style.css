@@ -301,11 +301,12 @@ textarea {
 }
 
 .main {
-    text-align: center
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .main .desc {
-    margin: 155px 65px 155px 65px;
+    margin: 155px 65px 15px 65px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -401,6 +402,7 @@ body{
     left: 0;
     width: 100%;
     background: #000842;
+    margin-bottom: 50px;
 }
 
 .header__wrapper{
@@ -484,7 +486,7 @@ body{
 
 .project__wrap {
     max-width: 1356px;
-    background: url('../image/svg/Rectangle 13.jpg');
+    background: #F4F8FA;
     margin: 0 auto;
     height: 762px;
     border-radius: 14px;
@@ -514,16 +516,19 @@ body{
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    color: #77449F;
+    color: #0C21C1;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 50px;
 }
 
 
 .project-1 {
 
-    max-width: 328px;
+    width: 328px;
     height: 551px;
-    background: url('../image/svg/Rectangle 1.png') no-repeat;
+    /*background: url('../image/svg/Rectangle 1.png') no-repeat;*/
+
+    background: #ADD1FB;
     margin: 0 auto;
 
     border-radius: 15px;
@@ -567,21 +572,21 @@ body{
 }
 
 .w {
-    position: absolute;
+    /*position: absolute;*/
     bottom: 475px;
     left: 110px;
     color: #2D2C5A;
     background-color:#CEF6FF;
     border-radius: 6px;
     padding: 5px;
-    width: 150px;
+    width: 250px;
     height: 50px;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 10px auto;
 }
 
 .h {
-    position: absolute;
     bottom: 15px;
     left: 110px;
     color:#2D2C5A;
@@ -594,6 +599,8 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 24px;
     text-decoration: none;
+    margin: 440px auto;
+
 }
 
 

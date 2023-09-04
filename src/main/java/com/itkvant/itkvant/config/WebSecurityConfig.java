@@ -38,6 +38,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .defaultSuccessUrl("/", true)
                 .permitAll();
 
         return http.build();

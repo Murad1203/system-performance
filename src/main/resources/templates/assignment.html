@@ -15,9 +15,23 @@
     <link rel="stylesheet" th:href="@{/css/assignment.css}">
 </head>
 <body>
-<form action="">
+
+
+
+<form action="#">
+
+    <div>
+        <h2 id="as_id" th:text=" 'Номер задания: ' + ${assignment.id}"></h2>
+        <h2 id="as_name" th:text="${assignment.name}"></h2> <br>
+        <h2 th:text="${assignment.description}"></h2> <br>
+        <h2 id="as_award" th:text="${assignment.award}"></h2> <br>
+    </div>
+
     <textarea id="python-editor">//Напишите код сюда</textarea>
 
+
+
+    <input type="button" id="button" value="Отправить на проверку">
     <script>
         var editor = CodeMirror.fromTextArea(document.getElementById("python-editor"), {
             mode: "python",
@@ -30,10 +44,64 @@
             lintWith: CodeMirror.pyflakes,
             extraKeys: {"Ctrl-Space": "autocomplete"}
         });
+        const as_id = null;
+        let as_name = document.getElementById("as_name");
+        let as_award = document.getElementById("as_award");
+
+        let button = document.getElementById("button");
+        let user_text = "";
+
+
+        let options = {}
+        let assignmentUser = {}
+
+        // Данные для отправки в теле запроса
+
+
+        editor.on("change", function(instance) {
+            user_text = editor.getValue();
+        });
+
+        button.addEventListener("click", () => {
+
+            sendCode();
+        })
+
+
+
+
+        function sendCode() {
+            assignmentUser  = {
+                userName: "",
+                userLastname: "",
+                assignmtName: as_name.innerText,
+                assignmtDescription: user_text,
+                assignmtAward: as_award.innerText
+            };
+
+
+
+            // Опции запроса
+            options = {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(assignmentUser)
+            };
+
+            fetch("http://localhost:8080/assignment-users", options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    });
+
+        }
+
     </script>
-
-    <input type="button" value="Отправить на проверку">
-
 </form>
 
 
