@@ -16,3 +16,18 @@ databaseChangeLog:
 
   - include:
       file: classpath:db/changelog/changes/0003-transaction.yaml
+
+  - include:
+      file: classpath:db/changelog/changes/quiz_migrations/0001-test_quiz.yaml
+
+  - include:
+      file: classpath:db/changelog/changes/quiz_migrations/0001-question.yaml
+#
+  - include:
+      file: classpath:db/changelog/changes/quiz_migrations/0001-answer.yaml
+#
+  - include:
+      file: classpath:db/changelog/changes/quiz_migrations/0001-history.yaml
+
+  - include:
+      file: classpath:db/changelog/changes/quiz_migrations/0002-FK-history-test.yaml

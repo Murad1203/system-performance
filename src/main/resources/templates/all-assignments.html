@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" th:href="@{/css/assignment.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+
 </head>
 <body>
 <header class="header">
@@ -18,7 +19,7 @@
                     <img th:src="@{/image/svg/Ethereum.svg}" alt="#" class="header__logo-link" >
                 </a>
                 <a href="" class="header__logo-linkkk">
-                    KVANTUM
+                    Задания
                 </a>
             </div>
 
@@ -37,16 +38,8 @@
                         <a href="./bazaznaniy.html"class="header__link">Магазин</a>
                     </li>
 
-                    <li class="header__item" >
-                        <a href="#" class="header__link">o нас</a>
-                    </li>
-
                     <li class="header__item">
                         <a href="#" class="header__link">FAQ</a>
-                    </li>
-
-                    <li class="header__item">
-                        <a class="header__link" href="#" th:text="'Баланс: ' + ${balance} + 'KV'">9999KV</a>
                     </li>
                 </ul>
             </nav>
@@ -66,5 +59,7 @@
 
 </div>
 
+
+<!--<section th:replace="index :: footer"></section>-->
 </body>
 </html>

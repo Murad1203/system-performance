@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: createTestTable
+      author: MMY12
+      changes:
+        - createTable:
+            tableName: test
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: test_name
+                  type: varchar(255)

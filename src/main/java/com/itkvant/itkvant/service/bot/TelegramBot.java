@@ -5,10 +5,6 @@ import com.itkvant.itkvant.model.Wallet;
 import com.itkvant.itkvant.model.dto.AssignmentUser;
 import com.itkvant.itkvant.service.TransactionService;
 import com.itkvant.itkvant.service.WalletService;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

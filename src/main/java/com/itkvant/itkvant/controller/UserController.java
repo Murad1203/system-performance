@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.security.Principal;
 
 @Controller
@@ -30,6 +31,15 @@ public class UserController {
         Wallet wallet = walletService.findBYUserId(id);
         model.addAttribute("balance" , wallet.getBalance());
         return "index";
+    }
+
+    @GetMapping("/account")
+    public String getAccount(Authentication authentication, Model model) {
+        User user = (User) authentication.getPrincipal();
+        Double walletBalance = walletService.findBYUserId(user.getId()).getBalance();
+        model.addAttribute("user", user);
+        model.addAttribute("balance", walletBalance);
+        return "acaount_user";
     }
 
 

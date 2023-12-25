@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+        id: renameTableHistory
+        author: MMY12
+        changes:
+          - renameTable:
+              oldTableName: history-quiz
+              newTableName: history_quiz
+  - changeSet:
+      id: addForeignKeyToQuestion
+      author: MMY12
+      changes:
+          - addForeignKeyConstraint:
+                baseTableName: history_quiz
+                baseColumnNames: test_id
+                constraintName: FK_history_quiz_test
+                referencedTableName: test
+                referencedColumnNames: id
+                onDelete: CASCADE
+  - changeSet:
+      id: addForeignKeyToUser
+      author: MMY12
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: history_quiz
+            baseColumnNames: user_id
+            constraintName: FK_history_quiz_user
+            referencedTableName: users
+            referencedColumnNames: id
+            onDelete: CASCADE
+
+
+
+

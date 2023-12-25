@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Questions</title>
+    <style>
+        /* Add your CSS styles here */
+        .draggable {
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+<h1>Конструктор создании теста</h1>
+<div>
+    <input id="testName" type="text" placeholder="Название теста">
+</div>
+<div id="questionsContainer">
+    <!-- Container for dynamically generated questions -->
+</div>
+<button type="button" onclick="addQuestion()">Добавить вопрос</button>
+<button id="buttonTest" type="submit">Создать Тест</button>
+
+
+<script th:src="@{/js/addQuestAndAnswer.js}"></script>
+<script th:src="@{/js/createRequestForBack.js}"></script>
+
+</body>
+</html>

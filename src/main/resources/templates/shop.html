@@ -1,0 +1,222 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Магазин квантов</title>
+
+    <link rel="stylesheet" th:href="@{/css/assignment.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <link th:href="@{for_shop/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" th:href="@{for_shop/assets/css/fontawesome.css}">
+    <link rel="stylesheet" th:href="@{for_shop/assets/css/templatemo-snapx-photography.css}">
+    <link rel="stylesheet" th:href="@{for_shop/assets/css/owl.css}">
+    <link rel="stylesheet" th:href="@{for_shop/assets/css/animate.css}">
+    <link rel="stylesheet" th:href="@{for_shop/https://unpkg.com/swiper@7/swiper-bundle.min.css}"/>
+
+</head>
+<body>
+
+<header class="header">
+    <div class="wrapper">
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <a href="" class="header__logo-link">
+                    <img th:src="@{/image/svg/Ethereum.svg}" alt="#" class="header__logo-link" >
+                </a>
+                <a href="" class="header__logo-linkkk">
+                    Тесты
+                </a>
+            </div>
+
+
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="./index.html" class="header__link">личный кабинет</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a th:href="@{/assignments/}" class="header__link">Задания</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="./bazaznaniy.html"class="header__link">Магазин</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="#" class="header__link">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<div class="featured-items" id="featured-items">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="owl-features owl-carousel" style="position: relative; z-index: 5;">
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-01.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Walk In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Vincent Adam</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $1.000 + Camera Nikon</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-02.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Smile In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Thomas Eddy</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $1,200 + Canon EOS R7</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-03.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Happy In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Vincent Adam</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $1,800 + Canon EOS R6</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-01.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Walk In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Thomas Eddy</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $8,400 + Canon EOS R1</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-02.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Run In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Vincent Adam</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $5,500 + Canon EOS R3</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-03.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Stay In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Thomas Eddy</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $4,400 + Canon EOS R5</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-01.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Walk In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Vincent Adam</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $3,800 + Canon EOS R6</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-02.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Shoot In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Vincent Adam</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $2,400 + Canon EOS R7</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="thumb">
+                            <img th:src="@{for_shop/assets/images/featured-03.jpg}" alt="">
+                            <div class="hover-effect">
+                                <div class="content">
+                                    <h4>Fly In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
+                                    <ul>
+                                        <li><span>Contest Winner:</span> Vincent Adam</li>
+                                        <li><span>Contest Author:</span> Anthony Soft</li>
+                                        <li><span>Awards:</span> $1,200 + Canon EOS R10</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script th:src="@{for_shop/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{for_shop/vendor/bootstrap/js/bootstrap.min.js}"></script>
+
+<script th:src="@{for_shop/assets/js/isotope.min.js}"></script>
+<script th:src="@{for_shop/assets/js/owl-carousel.js}"></script>
+
+<script th:src="@{for_shop/assets/js/tabs.js}"></script>
+<script th:src="@{for_shop/assets/js/popup.js}"></script>
+<script th:src="@{for_shop/assets/js/custom.js}"></script>
+
+</body>
+</html>

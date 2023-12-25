@@ -27,7 +27,6 @@ public class UserService implements UserDetailsService {
     @Autowired
     private WalletService walletService;
 
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         final Optional<User> optionalUser = userRepository.findByEmail(email);
@@ -41,12 +40,10 @@ public class UserService implements UserDetailsService {
 
 
     public void signUpUser(User user) {
-        log.info("----- user ----");
         final String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encryptedPassword);
 
         final User createdUser = userRepository.save(user);
-        log.info("----3-----" + user);
         walletService.createWallet(user);
     }
 

@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: createHistoryQuizTable
+      author: MMY12
+      changes:
+        - createTable:
+            tableName: history-quiz
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: test_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: FK_history_quiz_test
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: FK_history_quiz_user
+              - column:
+                  name: count_true_answers
+                  type: int
+              - column:
+                  name: await
+                  type: double
+#
+#  - changeSet:
+#      id: addForeignKeyToTest
+#      author: MMY12
+#      changes:
+#        - addForeignKeyConstraint:
+#            baseTableName: history_quiz
+#            baseColumnNames: test_id
+#            constraintName: FK_history_quiz_test
+#            referencedTableName: test
+#            referencedColumnNames: id
+#            onDelete: CASCADE
+#
+#  - changeSet:
+#      id: addForeignKeyToUser
+#      author: MMY12
+#      changes:
+#        - addForeignKeyConstraint:
+#            baseTableName: history_quiz
+#            baseColumnNames: user_id
+#            constraintName: FK_history_quiz_user
+#            referencedTableName: user
+#            referencedColumnNames: id
+#            onDelete: CASCADE

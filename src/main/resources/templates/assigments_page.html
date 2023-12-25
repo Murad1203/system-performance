@@ -1,0 +1,69 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignments</title>
+
+    <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" th:href="@{assets/css/fontawesome.css}">
+    <link rel="stylesheet" th:href="@{assets/css/templatemo-eduwell-style.css}">
+    <link rel="stylesheet" th:href="@{assets/css/owl.css}">
+    <link rel="stylesheet" th:href="@{assets/css/lightbox.css}">
+
+</head>
+<body>
+
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img th:src="@{assets/images/templatemo-eduwell.png}" alt="EduWell Template">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="" class="active">Личный кабинет</a></li>
+                        <li><a th:href="@{/quizs}">Тесты</a></li>
+                        <li><a th:href="@{/assignments/}">Задания</a></li>
+                        <li class="has-sub">
+                            <a href="javascript:void(0)">О нас</a>
+                            <ul class="sub-menu">
+                                <li><a href="about-us.html">Кванториум</a></li>
+                                <li><a href="our-services.html">Другие сервисы</a></li>
+                                <li><a href="contact-us.html">Записаться</a></li>
+                            </ul>
+                        </li>
+                        <li class="scroll-to-section"><a>Магазин</a></li>
+                        <li class="scroll-to-section"><a href="#" th:text="'Баланс: ' + ${balance} + 'KV'">Баланс</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<script th:src="@{assets/js/isotope.min.js}"></script>
+<script th:src="@{assets/js/owl-carousel.js}"></script>
+<script th:src="@{assets/js/lightbox.js}"></script>
+<script th:src="@{assets/js/tabs.js}"></script>
+<script th:src="@{assets/js/video.js}"></script>
+<script th:src="@{assets/js/slick-slider.js}"></script>
+<script th:src="@{assets/js/custom.js}"></script>
+
+</body>
+</html>

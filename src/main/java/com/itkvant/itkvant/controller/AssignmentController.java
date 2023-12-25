@@ -24,14 +24,12 @@ public class AssignmentController {
     public String assignments(Model model) {
         model.addAttribute("task", assignmentService.getAllAssignments());
         return "all-assignments";
+
     }
 
     @GetMapping("/assignment/{id}")
     public String checkAssignment(@PathVariable long id, Model model) {
-
         model.addAttribute("assignment", assignmentService.getAssignmentById(id));
-
-
         return "assignment";
     }
 

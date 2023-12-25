@@ -1,0 +1,62 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/assignment.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+<header class="header">
+    <div class="wrapper">
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <a href="" class="header__logo-link">
+                    <img th:src="@{/image/svg/Ethereum.svg}" alt="#" class="header__logo-link" >
+                </a>
+                <a href="" class="header__logo-linkkk">
+                    Тесты
+                </a>
+            </div>
+
+
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="./index.html" class="header__link">личный кабинет</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a th:href="@{/assignments/}" class="header__link">Задания</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="./bazaznaniy.html"class="header__link">Магазин</a>
+                    </li>
+
+                    <li class="header__item">
+                        <a href="#" class="header__link">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="task">
+    <div class="block" th:each="test: ${tests}">
+        <a class="task_link" th:href="@{'/test/' + ${test.id}}"    style="text-decoration: none">
+            <div class="image-task"><img th:src="@{/image/assignment.svg}" alt=""></div>
+            <h2 th:text="${test.testName}" class="title"></h2>
+            <p class="price" th:text="'Цена:' + 'КВАНТ'"></p>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

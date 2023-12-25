@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style_test_quest.css}">
+    <title>Тестирование</title>
+</head>
+<body>
+<!--<div id="question-container" th:data="${testId}">-->
+<!--    <div id="answers-container" class="blcok_ques">-->
+<!--        &lt;!&ndash; Ответы будут добавлены здесь &ndash;&gt;-->
+<!--    </div>-->
+<!--    <button id="next-button">Следующий вопрос</button>-->
+<!--</div>-->
+
+
+<div class="wrapper">
+    <div class="quiz_app" id="question-container" th:data="${testId}">
+        <div class="loader_box">
+            <div id="loader" class="loader"></div>
+        </div>
+        <div class="question_box">
+            <p id="question">what's the name of this artery</p>
+        </div>
+        <div class="answers_container" id="answers-container">
+
+        </div>
+        <div class="navigation_box">
+            <input id="next-button" type="button" value="Дальше">
+        </div>
+    </div>
+</div>
+
+
+<div id="result-container" style="display: none;">
+    <h2>Результаты:</h2>
+    <p id="score">Вы ответили правильно на 0 из 0 вопросов.</p>
+</div>
+<script th:src="@{/js/test.js}"></script>
+<script th:src="@{/js/quest_page.js}"></script>
+</body>
+</html>
